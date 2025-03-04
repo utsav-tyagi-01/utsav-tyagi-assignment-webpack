@@ -2,6 +2,7 @@
     padding: 50px;
     background: white;
     text-align: center;
+    margin-bottom: 50px;
 
     h2 {
         font-size: 2.5rem;
@@ -28,5 +29,11 @@
 @media (width<500px){
     .about-text{
         text-align: justify;
+    }
+}
+
+@media(width<968px){
+    .about-container{
+        flex-direction: column-reverse;
     }
 }

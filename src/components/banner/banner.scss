@@ -1,17 +1,20 @@
 .main {
     display: flex;
     align-items: center;
-    flex-wrap: wrap-reverse;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 50px;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+    background: linear-gradient(to right, #000000, #002425);
     color: white;
+    min-height: 35rem;
 
     &-content {
-        max-width: 50%;
+        max-width: 100%;
         h1 {
             font-size: 3rem;
             margin: 0;
+            span{
+                color: #00838d;
+            }
         }
         p {
             font-size: 1.5rem;
@@ -19,19 +22,124 @@
         }
     }
     &-image img {
-        max-width: 12.5rem;
+        max-width: 20.5rem;
         border-radius: 50%;
         object-fit: cover;
-        border: 5px solid #fff;
+        border: 5px solid #ffffffc5;
+
+        &:hover{
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
     }
 }
 
-@media (width<500px){
+
+
+.home__button{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+  .home__hire,.home__download {
+    font-weight: 500;
+    background-color: #00838d;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: 1px white solid;
+    border-radius: 10px;
+    cursor: pointer;
+    
+  }
+  
+  .home__hire:hover, .home__download:hover {
+    background-color: white;
+    color: #00838d;
+    border: 1px #00838d solid;
+    transition: 0.6s ease-in;
+  }
+  
+  .home__hire:focus, .home__download:focus {
+    outline: 0;
+  }
+  
+ 
+
+  .btn {
+
+    &,
+    &:link,
+    &:visited {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background-color: #293335;
+        border: 1px solid #293335;
+        border-radius: 10rem;
+        box-shadow: 0 1rem 2rem rgba(black, .17);
+        transition: all .6s;
+
+       
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        content: '';
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        z-index: -100;
+        transition: all 400ms;   
+        color: inherit;
+        background: inherit;     
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 2rem 3rem rgba(black, .17);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+    }
+
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 1rem 2rem rgba(black, .17);
+    }
+
+    &__hire {
+
+        &:link,
+        &:visited {
+            opacity: .7;
+            color: white;
+            border: 1px solid white;
+            background-color: transparent;
+        }
+    }
+
+}
+
+@media (width<800px){
     .main{
+        flex-direction: column-reverse;
         justify-content: center;
 
         &-content{
             text-align: center;
         }
+    }
+    img{
+        width: 200px;
+    }
+    .home__button{
+        flex-direction: column;
     }
 }
